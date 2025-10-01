@@ -4,10 +4,12 @@ punc_list = {"'", ".", ";", ":", "!", "?", "/", ",", "#", "@", "$", "&" }
 for i in punc_list:
     str = str.replace(i, " ")
 words = dict()
-for i in str.split():
+for i in sorted(str.split()):
     if i in words.keys():
         words[i] += 1
     else:
         words[i] = 1
 for key, value in words.items():
     print(f"{key} - {value}")
+for key in words:
+    print(key, "->", words[key])
